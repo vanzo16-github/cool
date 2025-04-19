@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ff5000;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-500px) scale(1);
+}
+
+.cube {
+    width: 150px;
+    height: 150px;
+    margin: 40px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.cube div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.front-first {
+    transform: translateZ(75px);
+    background-image: url('img/C.png');
+}
+
+.top-first {
+    transform: rotateX(90deg) translateZ(75px);
+    background-image: url('img/G.png');
+}
+
+.right-first {
+    transform: rotateY(90deg) translateZ(75px);
+    background-image: url('img/C bottom.png');
+}
+
+.front-last {
+    transform: translateZ(75px);
+    background-image: url('img/L.png');
+}
+
+.bottom-last {
+    transform: rotateX(-90deg) translateZ(75px);
+    background-image: url('img/D.png');
+}
+
+.left-last {
+    transform: rotateY(-90deg) translateZ(75px);
+    background-image: url('img/L bottom.png');
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    color: black;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.letter-o {
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('img/O.png');
+}
+
+.first {
+    animation: text_rotation_first 5s linear;
+    animation-fill-mode: forwards;
+}
+
+.last {
+    animation: text_rotation_last 5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes text_rotation_first {
+
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg) rotateZ(-90deg);
+    }
+
+}
+
+@keyframes text_rotation_last {
+
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(90deg) rotateZ(-90deg);
+    }
+
+}
